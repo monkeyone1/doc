@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>张振东</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                张振东
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">首页</a></li><li><a href="#"><span></span>React</a><ul><li><a href="../../html/React/webpack 的基本使用.html">webpack 的基本使用</a></li><li><a href="../../html/React/React 第一天.html">React 第一天</a></li><li><a href="../../html/React/React 第二天.html">React 第二天</a></li><li><a href="../../html/React/React 第三天.html">React 第三天</a></li><li><a href="../../html/React/React 第四天.html">React 第四天</a></li><li><a href="../../html/React/React 第五天.html">React 第五天</a></li><li><a href="../../html/React/React 第八天.html">React 第八天</a></li><li><a href="../../html/React/React  第七天.html">React  第七天</a></li><li><a href="../../html/React/React  第六天.html">React  第六天</a></li><li><a href="../../html/React/React 第 九 天.html">React 第 九 天</a></li></ul></li><li><a href="../../html/git.html">git</a></li><li><a href="#"><span></span>android</a><ul><li class="active"><a href="../../html/android/常见布局.html">常见布局</a></li><li><a href="../../html/android/常用权限.html">常用权限</a></li><li><a href="../../index.html">Sqllift</a></li><li><a href="../../html/android/Sqllife.html">Sqllife</a></li><li><a href="../../html/android/linux 指令集.html">linux 指令集</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0常见布局">常见布局</a><ul><li><a href="#t1相对布局">相对布局</a><ul><li><a href="#t2RelativeLayout">RelativeLayout</a></li></ul></li><li><a href="#t3线性布局">线性布局</a><ul><li><a href="#t4LinearLayout">LinearLayout</a></li></ul></li><li><a href="#t5帧布局">帧布局</a><ul><li><a href="#t6FrameLayout">FrameLayout</a></li></ul></li><li><a href="#t7表格布局">表格布局</a><ul><li><a href="#t8TableLayout">TableLayout</a></li></ul></li><li><a href="#t9绝对布局">绝对布局</a><ul><li><a href="#t10AbsoluteLayout">AbsoluteLayout</a></li></ul></li></ul></li><li><a href="#t11logcat">logcat</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0&#x5E38;&#x89C1;&#x5E03;&#x5C40;">&#x5E38;&#x89C1;&#x5E03;&#x5C40; <a href="#t0&#x5E38;&#x89C1;&#x5E03;&#x5C40;"> # </a></h1>
+<h3 id="t1&#x76F8;&#x5BF9;&#x5E03;&#x5C40;">&#x76F8;&#x5BF9;&#x5E03;&#x5C40; <a href="#t1&#x76F8;&#x5BF9;&#x5E03;&#x5C40;"> # </a></h3>
+<h5 id="t2RelativeLayout">RelativeLayout <a href="#t2RelativeLayout"> # </a></h5>
+<ul>
+<li>&#x7EC4;&#x4EF6;&#x9ED8;&#x8BA4;&#x5DE6;&#x5BF9;&#x9F50;&#x3001;&#x9876;&#x90E8;&#x5BF9;&#x9F50;</li>
+<li><p>&#x8BBE;&#x7F6E;&#x7EC4;&#x4EF6;&#x5728;&#x6307;&#x5B9A;&#x7EC4;&#x4EF6;&#x7684;&#x53F3;&#x8FB9;</p>
+<pre><code>   android:layout_toRightOf&#xCF;=&quot;@id/tv1&quot;
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;&#x5728;&#x6307;&#x5B9A;&#x7EC4;&#x4EF6;&#x7684;&#x4E0B;&#x8FB9;</p>
+<pre><code>  android:layout_below=&quot;@id/tv1&quot;
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;&#x53F3;&#x5BF9;&#x9F50;&#x7236;&#x5143;&#x7D20;</p>
+<pre><code>  android:layout_alignParentRight=&quot;true&quot;
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;&#x4E0E;&#x6307;&#x5B9A;&#x7EC4;&#x4EF6;&#x53F3;&#x5BF9;&#x9F50;</p>
+<pre><code>   android:layout_alignRight=&quot;@id/tv1&quot;
+</code></pre></li>
+</ul>
+<h3 id="t3&#x7EBF;&#x6027;&#x5E03;&#x5C40;">&#x7EBF;&#x6027;&#x5E03;&#x5C40; <a href="#t3&#x7EBF;&#x6027;&#x5E03;&#x5C40;"> # </a></h3>
+<h5 id="t4LinearLayout">LinearLayout <a href="#t4LinearLayout"> # </a></h5>
+<ul>
+<li><p>&#x6307;&#x5B9A;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6392;&#x5217;&#x65B9;&#x5411;</p>
+<pre><code>  android:orientation=&quot;horizontal&quot;
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;&#x53F3;&#x5BF9;&#x9F50;</p>
+<pre><code>  android:layout_gravity=&quot;right&quot;
+</code></pre></li>
+<li>&#x5F53;&#x7AD6;&#x76F4;&#x5E03;&#x5C40;&#x65F6;&#xFF0C;&#x53EA;&#x80FD;&#x5DE6;&#x53F3;&#x5BF9;&#x9F50;&#x548C;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#xFF0C;&#x9876;&#x90E8;&#x5E95;&#x90E8;&#x5BF9;&#x9F50;&#x7AD6;&#x76F4;&#x5C45;&#x4E2D;&#x65E0;&#x6548;</li>
+<li>&#x5F53;&#x6C34;&#x5E73;&#x5E03;&#x5C40;&#x65F6;&#xFF0C;&#x53EA;&#x80FD;&#x9876;&#x90E8;&#x5E95;&#x90E8;&#x5BF9;&#x9F50;&#x548C;&#x7AD6;&#x76F4;&#x5C45;&#x4E2D;</li>
+<li>&#x4F7F;&#x7528;match_parent&#x65F6;&#x6CE8;&#x610F;&#x4E0D;&#x8981;&#x628A;&#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x9876;&#x51FA;&#x53BB;</li>
+<li><p>&#x7EBF;&#x6027;&#x5E03;&#x5C40;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;&#x6743;&#x91CD;</p>
+<pre><code>  android:layout_weight=&quot;1&quot;
+</code></pre></li>
+<li>&#x6743;&#x91CD;&#x8BBE;&#x7F6E;&#x7684;&#x662F;&#x6309;&#x6BD4;&#x4F8B;&#x5206;&#x914D;&#x5269;&#x4F59;&#x7684;&#x7A7A;&#x95F4;</li>
+</ul>
+<h3 id="t5&#x5E27;&#x5E03;&#x5C40;">&#x5E27;&#x5E03;&#x5C40; <a href="#t5&#x5E27;&#x5E03;&#x5C40;"> # </a></h3>
+<h5 id="t6FrameLayout">FrameLayout <a href="#t6FrameLayout"> # </a></h5>
+<ul>
+<li>&#x9ED8;&#x8BA4;&#x7EC4;&#x4EF6;&#x90FD;&#x662F;&#x5DE6;&#x5BF9;&#x9F50;&#x548C;&#x9876;&#x90E8;&#x5BF9;&#x9F50;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;div</li>
+<li><p>&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;</p>
+<pre><code>  android:layout_gravity=&quot;bottom&quot;
+</code></pre></li>
+<li>&#x4E0D;&#x80FD;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x5E03;&#x5C40;</li>
+</ul>
+<h3 id="t7&#x8868;&#x683C;&#x5E03;&#x5C40;">&#x8868;&#x683C;&#x5E03;&#x5C40; <a href="#t7&#x8868;&#x683C;&#x5E03;&#x5C40;"> # </a></h3>
+<h5 id="t8TableLayout">TableLayout <a href="#t8TableLayout"> # </a></h5>
+<ul>
+<li>&#x6BCF;&#x4E2A;<tablerow>&#x8282;&#x70B9;&#x662F;&#x4E00;&#x884C;&#xFF0C;&#x5B83;&#x7684;&#x6BCF;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x662F;&#x4E00;&#x5217;</tablerow></li>
+<li><p>&#x8868;&#x683C;&#x5E03;&#x5C40;&#x4E2D;&#x7684;&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;&#x5BBD;&#x9AD8;&#xFF0C;&#x56E0;&#x4E3A;&#x8BBE;&#x7F6E;&#x4E86;&#x4E5F;&#x65E0;&#x6548;</p>
+<ul>
+<li>&#x6839;&#x8282;&#x70B9;<tablelayout>&#x7684;&#x5B50;&#x8282;&#x70B9;&#x5BBD;&#x4E3A;&#x5339;&#x914D;&#x7236;&#x5143;&#x7D20;&#xFF0C;&#x9AD8;&#x4E3A;&#x5305;&#x88F9;&#x5185;&#x5BB9;</tablelayout></li>
+<li><tablerow>&#x8282;&#x70B9;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x5BBD;&#x4E3A;&#x5305;&#x88F9;&#x5185;&#x5BB9;&#xFF0C;&#x9AD8;&#x4E3A;&#x5305;&#x88F9;&#x5185;&#x5BB9;</tablerow></li>
+<li>&#x4EE5;&#x4E0A;&#x9ED8;&#x8BA4;&#x5C5E;&#x6027;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;</li>
+</ul>
+</li>
+<li><p>&#x6839;&#x8282;&#x70B9;&#x4E2D;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4EE5;&#x4E0B;&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x8BA9;&#x7B2C;1&#x5217;&#x62C9;&#x4F38;&#x586B;&#x6EE1;&#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;&#x7684;&#x5269;&#x4F59;&#x7A7A;&#x95F4;</p>
+<pre><code>  android:stretchColumns=&quot;1&quot;
+</code></pre></li>
+</ul>
+<h3 id="t9&#x7EDD;&#x5BF9;&#x5E03;&#x5C40;">&#x7EDD;&#x5BF9;&#x5E03;&#x5C40; <a href="#t9&#x7EDD;&#x5BF9;&#x5E03;&#x5C40;"> # </a></h3>
+<h5 id="t10AbsoluteLayout">AbsoluteLayout <a href="#t10AbsoluteLayout"> # </a></h5>
+<ul>
+<li><p>&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x7EC4;&#x4EF6;&#x7684;x&#x3001;y&#x5750;&#x6807;</p>
+<pre><code>  android:layout_x=&quot;144dp&quot;
+  android:layout_y=&quot;154dp&quot;
+</code></pre></li>
+</ul>
+<hr>
+<h1 id="t11logcat">logcat <a href="#t11logcat"> # </a></h1>
+<ul>
+<li>&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x603B;&#x5171;&#x5206;&#x4E3A;5&#x4E2A;&#x7B49;&#x7EA7;<ul>
+<li>verbose</li>
+<li>debug</li>
+<li>info</li>
+<li>warn</li>
+<li>error</li>
+</ul>
+</li>
+<li>&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;&#x65B9;&#x4FBF;&#x67E5;&#x770B;</li>
+<li>System.out.print&#x8F93;&#x51FA;&#x7684;&#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#x662F;info&#xFF0C;tag&#x662F;System.out</li>
+<li><p>Android&#x63D0;&#x4F9B;&#x7684;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;api</p>
+<pre><code>  Log.v(TAG, &quot;&#x52A0;&#x6CB9;&#x5427;&#xFF0C;&#x7AE5;&#x978B;&#x4EEC;&quot;);
+  Log.d(TAG, &quot;&#x52A0;&#x6CB9;&#x5427;&#xFF0C;&#x7AE5;&#x978B;&#x4EEC;&quot;);
+  Log.i(TAG, &quot;&#x52A0;&#x6CB9;&#x5427;&#xFF0C;&#x7AE5;&#x978B;&#x4EEC;&quot;);
+  Log.w(TAG, &quot;&#x52A0;&#x6CB9;&#x5427;&#xFF0C;&#x7AE5;&#x978B;&#x4EEC;&quot;);
+  Log.e(TAG, &quot;&#x52A0;&#x6CB9;&#x5427;&#xFF0C;&#x7AE5;&#x978B;&#x4EEC;&quot;);
+</code></pre></li>
+</ul>
+<hr>
+<p>#&#x6587;&#x4EF6;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;</p>
+<ul>
+<li>Ram&#x5185;&#x5B58;&#xFF1A;&#x8FD0;&#x884C;&#x5185;&#x5B58;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x7535;&#x8111;&#x7684;&#x5185;&#x5B58;</li>
+<li>Rom&#x5185;&#x5B58;&#xFF1A;&#x5185;&#x90E8;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x7535;&#x8111;&#x7684;&#x786C;&#x76D8;</li>
+<li>sd&#x5361;&#xFF1A;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x7535;&#x8111;&#x7684;&#x79FB;&#x52A8;&#x786C;&#x76D8;
+###&#x5728;&#x5185;&#x90E8;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4E2D;&#x8BFB;&#x5199;&#x6587;&#x4EF6;<blockquote>
+<p>&#x5C0F;&#x6848;&#x4F8B;&#xFF1A;&#x7528;&#x6237;&#x8F93;&#x5165;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#xFF0C;&#x52FE;&#x9009;&#x201C;&#x8BB0;&#x4F4F;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x201D;&#xFF0C;&#x70B9;&#x51FB;&#x767B;&#x5F55;&#x6309;&#x94AE;&#xFF0C;&#x767B;&#x5F55;&#x7684;&#x540C;&#x65F6;&#x6301;&#x4E45;&#x5316;&#x4FDD;&#x5B58;&#x8D26;&#x53F7;&#x548C;&#x5BC6;&#x7801;
+#####1. &#x5B9A;&#x4E49;&#x5E03;&#x5C40;</p>
+</blockquote>
+</li>
+</ul>
+<p>#####2. &#x5B8C;&#x6210;&#x6309;&#x94AE;&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</p>
+<ul>
+<li><p>&#x5F39;&#x571F;&#x53F8;&#x63D0;&#x793A;&#x7528;&#x6237;&#x767B;&#x5F55;&#x6210;&#x529F;</p>
+<pre><code>  Toast.makeText(this, &quot;&#x767B;&#x5F55;&#x6210;&#x529F;&quot;, Toast.LENGTH_SHORT).show();
+</code></pre></li>
+</ul>
+<p>#####3. &#x62FF;&#x5230;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;</p>
+<ul>
+<li><p>&#x5224;&#x65AD;&#x7528;&#x6237;&#x662F;&#x5426;&#x52FE;&#x9009;&#x4FDD;&#x5B58;&#x8D26;&#x53F7;&#x5BC6;&#x7801;</p>
+<pre><code>  CheckBox cb = (CheckBox) findViewById(R.id.cb);
+  if(cb.isChecked()){
+
+  }
+</code></pre></li>
+</ul>
+<p>#####4. &#x5F00;&#x542F;io&#x6D41;&#x628A;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x5185;&#x90E8;&#x5B58;&#x50A8;</p>
+<ul>
+<li><p>&#x76F4;&#x63A5;&#x5F00;&#x542F;&#x6587;&#x4EF6;&#x8F93;&#x51FA;&#x6D41;&#x5199;&#x6570;&#x636E;</p>
+<pre><code>  //&#x6301;&#x4E45;&#x5316;&#x4FDD;&#x5B58;&#x6570;&#x636E;
+      File file = new File(&quot;data/data/com.itheima.rwinrom/info.txt&quot;);
+      FileOutputStream fos = new FileOutputStream(file);
+      fos.write((name + &quot;##&quot; + pass).getBytes());
+      fos.close();
+</code></pre></li>
+<li><p>&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x524D;&#x5148;&#x68C0;&#x6D4B;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;</p>
+<pre><code>  if(file.exists())
+</code></pre></li>
+<li><p>&#x8BFB;&#x53D6;&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x662F;&#x76F4;&#x63A5;&#x5F00;&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x6D41;&#x8BFB;&#x53D6;</p>
+<pre><code>  File file = new File(&quot;data/data/com.itheima.rwinrom/info.txt&quot;);
+  FileInputStream fis = new FileInputStream(file);
+  //&#x628A;&#x5B57;&#x8282;&#x6D41;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x7B26;&#x6D41;
+  BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+  String text = br.readLine();
+  String[] s = text.split(&quot;##&quot;);
+</code></pre></li>
+<li><p>&#x8BFB;&#x53D6;&#x5230;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x56DE;&#x663E;&#x81F3;&#x8F93;&#x5165;&#x6846;</p>
+<pre><code>  et_name.setText(s[0]);
+  et_pass.setText(s[1]);
+</code></pre></li>
+<li>&#x5E94;&#x7528;&#x53EA;&#x80FD;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5305;&#x540D;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x80FD;&#x5230;&#x522B;&#x4EBA;&#x5BB6;&#x53BB;&#x521B;&#x5EFA;</li>
+</ul>
+<p>###&#x76F4;&#x63A5;&#x590D;&#x5236;&#x9879;&#x76EE;</p>
+<ul>
+<li>&#x9700;&#x8981;&#x6539;&#x52A8;&#x7684;&#x5730;&#x65B9;&#xFF1A;<ul>
+<li>&#x9879;&#x76EE;&#x540D;&#x5B57;</li>
+<li>&#x5E94;&#x7528;&#x5305;&#x540D;</li>
+<li>R&#x6587;&#x4EF6;&#x91CD;&#x65B0;&#x5BFC;&#x5305;</li>
+</ul>
+</li>
+</ul>
+<p>###&#x4F7F;&#x7528;&#x8DEF;&#x5F84;api&#x8BFB;&#x5199;&#x6587;&#x4EF6;</p>
+<ul>
+<li>getFilesDir()&#x5F97;&#x5230;&#x7684;file&#x5BF9;&#x8C61;&#x7684;&#x8DEF;&#x5F84;&#x662F;data/data/com.itheima.rwinrom2/files<ul>
+<li>&#x5B58;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53EA;&#x8981;&#x4F60;&#x4E0D;&#x5220;&#xFF0C;&#x5B83;&#x5C31;&#x4E00;&#x76F4;&#x5728;</li>
+</ul>
+</li>
+<li><p>getCacheDir()&#x5F97;&#x5230;&#x7684;file&#x5BF9;&#x8C61;&#x7684;&#x8DEF;&#x5F84;&#x662F;data/data/com.itheima.rwinrom2/cache</p>
+<ul>
+<li>&#x5B58;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5F53;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x65F6;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x88AB;&#x5220;&#x9664;</li>
+</ul>
+</li>
+<li><p>&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5E94;&#x7528;&#x754C;&#x9762;&#x7684;&#x6E05;&#x9664;&#x7F13;&#x5B58;&#xFF0C;&#x4F1A;&#x6E05;&#x9664;cache&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x6E05;&#x9664;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x6E05;&#x9664;&#x6574;&#x4E2A;&#x5305;&#x540D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x4E1C;&#x897F;</p>
+</li>
+</ul>
+<hr>
+<p>#&#x5728;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x8BFB;&#x5199;&#x6570;&#x636E;</p>
+<p>###sd&#x5361;&#x7684;&#x8DEF;&#x5F84;</p>
+<ul>
+<li>sdcard&#xFF1A;2.3&#x4E4B;&#x524D;&#x7684;sd&#x5361;&#x8DEF;&#x5F84;</li>
+<li>mnt/sdcard&#xFF1A;4.3&#x4E4B;&#x524D;&#x7684;sd&#x5361;&#x8DEF;&#x5F84;</li>
+<li><p>storage/sdcard&#xFF1A;4.3&#x4E4B;&#x540E;&#x7684;sd&#x5361;&#x8DEF;&#x5F84;</p>
+</li>
+<li><p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x6253;&#x5F00;sd&#x5361;&#x7684;&#x65B9;&#x5F0F;</p>
+<pre><code>  File file = new File(&quot;sdcard/info.txt&quot;);
+</code></pre></li>
+<li><p>&#x5199;sd&#x5361;&#x9700;&#x8981;&#x6743;&#x9650;</p>
+<pre><code>  &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
+</code></pre></li>
+<li><p>&#x8BFB;sd&#x5361;&#xFF0C;&#x5728;4.0&#x4E4B;&#x524D;&#x4E0D;&#x9700;&#x8981;&#x6743;&#x9650;&#xFF0C;4.0&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A;&#x9700;&#x8981;</p>
+<pre><code>  &lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot;/&gt;
+</code></pre></li>
+<li><p>&#x4F7F;&#x7528;api&#x83B7;&#x5F97;sd&#x5361;&#x7684;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;&#xFF0C;&#x90E8;&#x5206;&#x624B;&#x673A;&#x54C1;&#x724C;&#x4F1A;&#x66F4;&#x6539;sd&#x5361;&#x7684;&#x8DEF;&#x5F84;</p>
+<pre><code>  Environment.getExternalStorageDirectory()
+</code></pre></li>
+<li><p>&#x5224;&#x65AD;sd&#x5361;&#x662F;&#x5426;&#x51C6;&#x5907;&#x5C31;&#x7EEA;</p>
+<pre><code>  if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))
+</code></pre></li>
+</ul>
+<hr>
+<p>#&#x67E5;&#x770B;&#x6E90;&#x4EE3;&#x7801;&#x67E5;&#x627E;&#x83B7;&#x53D6;sd&#x5361;&#x5269;&#x4F59;&#x5BB9;&#x91CF;&#x7684;&#x4EE3;&#x7801;</p>
+<ul>
+<li>&#x5BFC;&#x5165;Settings&#x9879;&#x76EE;</li>
+<li><p>&#x67E5;&#x627E;&#x201C;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&#x201D;&#x5F97;&#x5230;</p>
+<pre><code>   &lt;string name=&quot;memory_available&quot; msgid=&quot;418542433817289474&quot;&gt;&quot;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&quot;&lt;/string&gt;
+</code></pre></li>
+<li><p>&#x67E5;&#x627E;&quot;memory_available&quot;&#xFF0C;&#x5F97;&#x5230;</p>
+<pre><code>  &lt;Preference android:key=&quot;memory_sd_avail&quot; 
+      style=&quot;?android:attr/preferenceInformationStyle&quot; 
+      android:title=&quot;@string/memory_available&quot;
+      android:summary=&quot;00&quot;/&gt;
+</code></pre></li>
+<li><p>&#x67E5;&#x627E;&quot;memory_sd_avail&quot;&#xFF0C;&#x5F97;&#x5230;</p>
+<pre><code>  //&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5C31;&#x662F;sd&#x5361;&#x5269;&#x4F59;&#x5BB9;&#x91CF;
+  formatSize(availableBlocks * blockSize) + readOnly
+  //&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x76F8;&#x4E58;&#xFF0C;&#x5F97;&#x5230;sd&#x5361;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x5269;&#x4F59;&#x5BB9;&#x91CF;
+  availableBlocks * blockSize
+</code></pre></li>
+<li><p>&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#x4F1A;&#x88AB;&#x5206;&#x4E3A;&#x82E5;&#x5E72;&#x4E2A;&#x533A;&#x5757;&#xFF0C;&#x6BCF;&#x4E2A;&#x533A;&#x5757;&#x6709;&#x56FA;&#x5B9A;&#x7684;&#x5927;&#x5C0F;</p>
+</li>
+<li>&#x533A;&#x5757;&#x5927;&#x5C0F; * &#x533A;&#x5757;&#x6570;&#x91CF; &#x7B49;&#x4E8E; &#x5B58;&#x50A8;&#x8BBE;&#x5907;&#x7684;&#x603B;&#x5927;&#x5C0F;</li>
+</ul>
+<hr>
+<p>#Linux&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;</p>
+<ul>
+<li>&#x5728;Android&#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x7528;&#x6237;</li>
+<li>drwxrwxrwx</li>
+<li>&#x7B2C;1&#x4F4D;&#xFF1A;d&#x8868;&#x793A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;-&#x8868;&#x793A;&#x6587;&#x4EF6;</li>
+<li>&#x7B2C;2-4&#x4F4D;&#xFF1A;rwx&#xFF0C;&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x62E5;&#x6709;&#x8005;&#x7528;&#x6237;&#xFF08;owner&#xFF09;&#x5BF9;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x6743;&#x9650;<ul>
+<li>r&#xFF1A;&#x8BFB;</li>
+<li>w&#xFF1A;&#x5199;</li>
+<li>x&#xFF1A;&#x6267;&#x884C;</li>
+</ul>
+</li>
+<li>&#x7B2C;5-7&#x4F4D;&#xFF1A;rwx&#xFF0C;&#x8868;&#x793A;&#x8DDF;&#x6587;&#x4EF6;&#x62E5;&#x6709;&#x8005;&#x7528;&#x6237;&#x540C;&#x7EC4;&#x7684;&#x7528;&#x6237;&#xFF08;grouper&#xFF09;&#x5BF9;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x6743;&#x9650;</li>
+<li>&#x7B2C;8-10&#x4F4D;&#xFF1A;rwx&#xFF0C;&#x8868;&#x793A;&#x5176;&#x4ED6;&#x7528;&#x6237;&#x7EC4;&#x7684;&#x7528;&#x6237;&#xFF08;other&#xFF09;&#x5BF9;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x6743;&#x9650;</li>
+</ul>
+<hr>
+<p>#openFileOutput&#x7684;&#x56DB;&#x79CD;&#x6A21;&#x5F0F;</p>
+<ul>
+<li>MODE_PRIVATE&#xFF1A;-rw-rw----</li>
+<li>MODE_APPEND:-rw-rw----</li>
+<li>MODE_WORLD_WRITEABLE:-rw-rw--w-</li>
+<li>MODE_WORLD_READABLE:-rw-rw-r--</li>
+</ul>
+<hr>
+<p>#SharedPreference</p>
+<blockquote>
+<p>&#x7528;SharedPreference&#x5B58;&#x50A8;&#x8D26;&#x53F7;&#x5BC6;&#x7801;</p>
+</blockquote>
+<ul>
+<li><p>&#x5F80;SharedPreference&#x91CC;&#x5199;&#x6570;&#x636E;</p>
+<pre><code>  //&#x62FF;&#x5230;&#x4E00;&#x4E2A;SharedPreference&#x5BF9;&#x8C61;
+  SharedPreferences sp = getSharedPreferences(&quot;config&quot;, MODE_PRIVATE);
+  //&#x62FF;&#x5230;&#x7F16;&#x8F91;&#x5668;
+  Editor ed = sp.edit();
+  //&#x5199;&#x6570;&#x636E;
+  ed.putBoolean(&quot;name&quot;, name);
+  ed.commit();
+</code></pre></li>
+<li><p>&#x4ECE;SharedPreference&#x91CC;&#x53D6;&#x6570;&#x636E;</p>
+<pre><code>  SharedPreferences sp = getSharedPreferences(&quot;config&quot;, MODE_PRIVATE);
+  //&#x4ECE;SharedPreference&#x91CC;&#x53D6;&#x6570;&#x636E;
+  String name = sp.getBoolean(&quot;name&quot;, &quot;&quot;);
+</code></pre></li>
+</ul>
+<hr>
+<p>#&#x751F;&#x6210;XML&#x6587;&#x4EF6;&#x5907;&#x4EFD;&#x77ED;&#x4FE1;</p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x51E0;&#x4E2A;&#x865A;&#x62DF;&#x7684;&#x77ED;&#x4FE1;&#x5BF9;&#x8C61;&#xFF0C;&#x5B58;&#x5728;list&#x4E2D;</li>
+<li>&#x5907;&#x4EFD;&#x6570;&#x636E;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x5907;&#x4EFD;&#x81F3;sd&#x5361;
+###&#x4F7F;&#x7528;StringBuffer&#x62FC;&#x63A5;&#x5B57;&#x7B26;&#x4E32;</li>
+<li><p>&#x628A;&#x6574;&#x4E2A;xml&#x6587;&#x4EF6;&#x6240;&#x6709;&#x8282;&#x70B9;append&#x5230;sb&#x5BF9;&#x8C61;&#x91CC;</p>
+<pre><code>  sb.append(&quot;&lt;?xml version=&apos;1.0&apos; encoding=&apos;utf-8&apos; standalone=&apos;yes&apos; ?&gt;&quot;);
+  //&#x6DFB;&#x52A0;smss&#x7684;&#x5F00;&#x59CB;&#x8282;&#x70B9;
+  sb.append(&quot;&lt;smss&gt;&quot;);
+  .......
+</code></pre></li>
+<li><p>&#x628A;sb&#x5199;&#x5230;&#x8F93;&#x51FA;&#x6D41;&#x4E2D;</p>
+<pre><code>  fos.write(sb.toString().getBytes());
+</code></pre></li>
+</ul>
+<p>###&#x4F7F;&#x7528;XMl&#x5E8F;&#x5217;&#x5316;&#x5668;&#x751F;&#x6210;xml&#x6587;&#x4EF6;</p>
+<ul>
+<li><p>&#x5F97;&#x5230;xml&#x5E8F;&#x5217;&#x5316;&#x5668;&#x5BF9;&#x8C61;</p>
+<pre><code>  XmlSerializer xs = Xml.newSerializer();
+</code></pre></li>
+<li><p>&#x7ED9;&#x5E8F;&#x5217;&#x5316;&#x5668;&#x8BBE;&#x7F6E;&#x8F93;&#x51FA;&#x6D41;</p>
+<pre><code>  File file = new File(Environment.getExternalStorageDirectory(), &quot;backupsms.xml&quot;);
+  FileOutputStream fos = new FileOutputStream(file);
+  //&#x7ED9;&#x5E8F;&#x5217;&#x5316;&#x5668;&#x6307;&#x5B9A;&#x597D;&#x8F93;&#x51FA;&#x6D41;
+  xs.setOutput(fos, &quot;utf-8&quot;);
+</code></pre></li>
+<li><p>&#x5F00;&#x59CB;&#x751F;&#x6210;xml&#x6587;&#x4EF6;</p>
+<pre><code>  xs.startDocument(&quot;utf-8&quot;, true);
+  xs.startTag(null, &quot;smss&quot;);
+  ......
+</code></pre></li>
+</ul>
+<hr>
+<p>#pull&#x89E3;&#x6790;xml&#x6587;&#x4EF6;</p>
+<ul>
+<li><p>&#x5148;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A;xml&#x6587;&#x4EF6;&#xFF0C;&#x5B58;&#x4E00;&#x4E9B;&#x5929;&#x6C14;&#x4FE1;&#x606F;
+###&#x62FF;&#x5230;xml&#x6587;&#x4EF6;</p>
+<pre><code>  InputStream is = getClassLoader().getResourceAsStream(&quot;weather.xml&quot;);
+</code></pre><p>###&#x62FF;&#x5230;pull&#x89E3;&#x6790;&#x5668;</p>
+<pre><code>  XmlPullParser xp = Xml.newPullParser();
+</code></pre></li>
+</ul>
+<p>###&#x5F00;&#x59CB;&#x89E3;&#x6790;</p>
+<ul>
+<li><p>&#x62FF;&#x5230;&#x6307;&#x9488;&#x6240;&#x5728;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</p>
+<pre><code>  int type = xp.getEventType();
+</code></pre></li>
+<li><p>&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x4E3B;&#x8981;&#x6709;&#x4E94;&#x79CD;</p>
+<ul>
+<li>START_DOCUMENT&#xFF1A;xml&#x5934;&#x7684;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</li>
+<li>END_DOCUMENT&#xFF1A;xml&#x5C3E;&#x7684;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</li>
+<li>START_TAG&#xFF1A;&#x5F00;&#x59CB;&#x8282;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</li>
+<li>END_TAG&#xFF1A;&#x7ED3;&#x675F;&#x8282;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</li>
+<li>TEXT&#xFF1A;&#x6587;&#x672C;&#x8282;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</li>
+</ul>
+</li>
+<li><p>&#x5982;&#x679C;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x4E0D;&#x662F;END_DOCUMENT&#xFF0C;&#x5C31;&#x8BF4;&#x660E;&#x89E3;&#x6790;&#x8FD8;&#x6CA1;&#x6709;&#x5B8C;&#x6210;&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x89E3;&#x6790;&#x5B8C;&#x6210;&#xFF0C;while&#x5FAA;&#x73AF;&#x7ED3;&#x675F;</p>
+<pre><code>  while(type != XmlPullParser.END_DOCUMENT)
+</code></pre></li>
+<li><p>&#x5F53;&#x6211;&#x4EEC;&#x89E3;&#x6790;&#x5230;&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6240;&#x4EE5;&#x5224;&#x65AD;&#x4E00;&#x4E0B;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;name</p>
+<ul>
+<li>&#x5F53;&#x89E3;&#x6790;&#x5230;weather&#x7684;&#x5F00;&#x59CB;&#x8282;&#x70B9;&#x65F6;&#xFF0C;new&#x51FA;list</li>
+<li>&#x5F53;&#x89E3;&#x6790;&#x5230;city&#x7684;&#x5F00;&#x59CB;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x521B;&#x5EFA;city&#x5BF9;&#x8C61;&#xFF0C;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x662F;&#x4E3A;&#x4E86;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x4FDD;&#x5B58;&#x5373;&#x5C06;&#x89E3;&#x6790;&#x5230;&#x7684;&#x6587;&#x672C;</li>
+<li><p>&#x5F53;&#x89E3;&#x6790;&#x5230;name&#x5F00;&#x59CB;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x83B7;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF0C;temp&#x3001;pm&#x4E5F;&#x662F;&#x4E00;&#x6837;</p>
+<pre><code>  case XmlPullParser.START_TAG:
+  //&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x540D;&#x5B57;
+      if(&quot;weather&quot;.equals(xp.getName())){
+          citys = new ArrayList&lt;City&gt;();
+      }
+      else if(&quot;city&quot;.equals(xp.getName())){
+          city = new City();
+      }
+      else if(&quot;name&quot;.equals(xp.getName())){
+          //&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6587;&#x672C;
+          String name = xp.nextText();
+          city.setName(name);
+      }
+      else if(&quot;temp&quot;.equals(xp.getName())){
+          String temp = xp.nextText();
+          city.setTemp(temp);
+      }
+      else if(&quot;pm&quot;.equals(xp.getName())){
+          String pm = xp.nextText();
+          city.setPm(pm);
+      }
+      break;
+</code></pre></li>
+</ul>
+</li>
+<li><p>&#x5F53;&#x89E3;&#x6790;&#x5230;city&#x7684;&#x7ED3;&#x675F;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x8BF4;&#x660E;city&#x7684;&#x4E09;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x5DF2;&#x7ECF;&#x5168;&#x90E8;&#x89E3;&#x6790;&#x5B8C;&#x4E86;&#xFF0C;&#x628A;city&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x81F3;list</p>
+<pre><code>  case XmlPullParser.END_TAG:
+      if(&quot;city&quot;.equals(xp.getName())){
+              citys.add(city);
+      }
+</code></pre></li>
+</ul>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

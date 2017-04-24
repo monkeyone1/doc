@@ -29,6 +29,16 @@
                     "React  第六天.md",
                     "React 第 九 天.md"
                 ]
+            },
+            "git.md",
+            {
+                "android": [
+                    "常见布局.md",
+                    "常用权限.md",
+                    "Sqllift.md",
+                    "Sqllife.md",
+                    "linux 指令集.md"
+                ]
             }
         ]
     }
